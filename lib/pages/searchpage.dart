@@ -1,5 +1,9 @@
+// ignore_for_file: missing_return
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:medsage/Seach%20page/topdoctors.dart';
 
 class MyCustomUI extends StatefulWidget {
   @override
@@ -19,7 +23,6 @@ class _MyCustomUIState extends State<MyCustomUI>
       vsync: this,
       duration: Duration(seconds: 1),
     );
-
     _animation = Tween<double>(begin: 0, end: 1)
         .animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut))
       ..addListener(() {
@@ -35,77 +38,56 @@ class _MyCustomUIState extends State<MyCustomUI>
     super.dispose();
   }
 
+  Future<void> _refresh() async {
+    return await Future.delayed(Duration(seconds: 1));
+  }
+
   @override
   Widget build(BuildContext context) {
     double _w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xffF5F5F5),
-      body: Stack(
-        children: [
-          ListView(
-            physics:
-            BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-            children: [
-              searchBar(),
-              SizedBox(height: _w / 20),
-              groupOfCards(
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo(),
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo()),
-              groupOfCards(
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo(),
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo()),
-              groupOfCards(
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo(),
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo()),
-              groupOfCards(
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo(),
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo()),
-              groupOfCards(
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo(),
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo()),
-              groupOfCards(
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo(),
-                  'Example Text',
-                  'Example Text',
-                  'assets/images/file_name.png',
-                  RouteWhereYouGo()),
-            ],
-          ),
-          settingIcon(),
-        ],
+      body: RefreshIndicator(
+        onRefresh: _refresh,
+        child: Stack(
+          children: [
+            ListView(
+              physics: BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
+              children: [
+                searchBar(),
+                SizedBox(height: _w / 20),
+                Container(
+                  height: 200,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                      TopDoctors(),
+                      SizedBox(width: 20),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            settingIcon(),
+          ],
+        ),
       ),
     );
   }
@@ -185,7 +167,7 @@ class _MyCustomUIState extends State<MyCustomUI>
                     fontWeight: FontWeight.w600,
                     fontSize: _w / 22),
                 prefixIcon:
-                Icon(Icons.search, color: Colors.black.withOpacity(.6)),
+                    Icon(Icons.search, color: Colors.black.withOpacity(.6)),
                 hintText: 'Search anything.....',
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -323,23 +305,23 @@ class MyFadeRoute extends PageRouteBuilder {
 
   MyFadeRoute({this.page, this.route})
       : super(
-    pageBuilder: (
-        BuildContext context,
-        Animation<double> animation,
-        Animation<double> secondaryAnimation,
-        ) =>
-    page,
-    transitionsBuilder: (
-        BuildContext context,
-        Animation<double> animation,
-        Animation<double> secondaryAnimation,
-        Widget child,
-        ) =>
-        FadeTransition(
-          opacity: animation,
-          child: route,
-        ),
-  );
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              FadeTransition(
+            opacity: animation,
+            child: route,
+          ),
+        );
 }
 
 class RouteWhereYouGo extends StatelessWidget {
@@ -368,10 +350,3 @@ class RouteWhereYouGo extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-      
