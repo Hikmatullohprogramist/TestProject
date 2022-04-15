@@ -16,11 +16,8 @@ class TopDoctors extends StatelessWidget {
           ),
         ],
       ),
-      child: Stack(
-        children: [
-          FlutterLogo(size: 105),
-        ],
-      ),
+      child: FlutterLogo(size: 105),
     );
   }
 }
+
