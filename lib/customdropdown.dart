@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, avoid_print, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -11,7 +13,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
 
   final TextEditingController controller = TextEditingController();
   String initialCountry = 'UZB';
-  PhoneNumber number = PhoneNumber(isoCode: 'UZB');
+  PhoneNumber number = PhoneNumber(isoCode: '+998');
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
               textFieldController: controller,
               formatInput: false,
               keyboardType:
-              TextInputType.numberWithOptions(signed: true, decimal: true),
+                  TextInputType.numberWithOptions(signed: true, decimal: true),
               onSaved: (PhoneNumber number) {
                 print('On Saved: $number');
               },
@@ -69,7 +71,7 @@ class _CustomDropdownState extends State<CustomDropdown> {
 
   void getPhoneNumber(String phoneNumber) async {
     PhoneNumber number =
-    await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber, 'UZB');
+        await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber, 'UZB');
 
     setState(() {
       this.number = number;

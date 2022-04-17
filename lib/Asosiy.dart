@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, unnecessary_import, unused_import, file_names, prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
+
 import 'dart:ui';
 
 import 'package:awesome_dropdown/awesome_dropdown.dart';

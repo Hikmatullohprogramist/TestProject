@@ -7,16 +7,14 @@ class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        Expanded(
-          child: Contanier_1(),
+      body: Center(
+        child: Text(
+          'Home Page',
+          style: TextStyle(
+            fontSize: 20.0,
+          ),
         ),
-        Expanded(
-          flex: 1,
-          child: Contanier_2(),
-        ),
-      ],
-    ));
+      ),
+    );
   }
 }

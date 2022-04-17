@@ -1,6 +1,6 @@
 // import 'dart:html';
 
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, prefer_final_fields
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, sized_box_for_whitespace, prefer_final_fields, unnecessary_import, use_key_in_widget_constructors, unused_field
 
 import 'dart:ui';
 
@@ -145,7 +145,8 @@ class _LoginPage3State extends State<LoginPage3> {
                                         width: 9.80,
                                         height: 7.13,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
                                           // color: Colors.white,
                                         ),
                                       ),
@@ -194,7 +195,8 @@ class _LoginPage3State extends State<LoginPage3> {
                           child: Container(
                             width: 33.86,
                             height: 33.86,
-                            child: Image.asset('assets/Need advice/Dentist.png'),
+                            child:
+                                Image.asset('assets/Need advice/Dentist.png'),
                           ),
                         ),
                         Positioned.fill(
@@ -242,7 +244,8 @@ class _LoginPage3State extends State<LoginPage3> {
                                         width: 9.80,
                                         height: 7.13,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
                                           // color: Colors.white,
                                         ),
                                       ),
@@ -291,7 +294,8 @@ class _LoginPage3State extends State<LoginPage3> {
                           child: Container(
                             width: 33.86,
                             height: 33.86,
-                            child: Image.asset('assets/Need advice/Oculist.png'),
+                            child:
+                                Image.asset('assets/Need advice/Oculist.png'),
                           ),
                         ),
                         Positioned.fill(
@@ -339,7 +343,8 @@ class _LoginPage3State extends State<LoginPage3> {
                                         width: 9.80,
                                         height: 7.13,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
                                           // color: Colors.white,
                                         ),
                                       ),
@@ -399,8 +404,9 @@ class _LoginPage3State extends State<LoginPage3> {
                               child: Image.asset(
                                   'assets/Need advice/Traumatologist.png')),
                         ),
-                        SizedBox(width: 100.0,),
-
+                        SizedBox(
+                          width: 100.0,
+                        ),
                         Positioned.fill(
                           child: Align(
                             alignment: Alignment.bottomLeft,
@@ -443,7 +449,8 @@ class _LoginPage3State extends State<LoginPage3> {
                                         width: 9.80,
                                         height: 7.13,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
                                           // color: Colors.white,
                                         ),
                                       ),
@@ -540,7 +547,8 @@ class _LoginPage3State extends State<LoginPage3> {
                                         width: 9.80,
                                         height: 7.13,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
                                           // color: Colors.white,
                                         ),
                                       ),
@@ -637,7 +645,8 @@ class _LoginPage3State extends State<LoginPage3> {
                                         width: 9.80,
                                         height: 7.13,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
                                           // color: Colors.white,
                                         ),
                                       ),
@@ -655,9 +664,10 @@ class _LoginPage3State extends State<LoginPage3> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20.0),
               child: GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => LoginPage4()),
@@ -670,7 +680,7 @@ class _LoginPage3State extends State<LoginPage3> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children:[
+                    children: [
                       Container(
                         width: 208,
                         height: 62,
@@ -678,12 +688,17 @@ class _LoginPage3State extends State<LoginPage3> {
                           borderRadius: BorderRadius.circular(31),
                           color: Color(0xff1d6aff),
                         ),
-                        padding: const EdgeInsets.only(left: 67, right: 66, top: 20, bottom: 19, ),
+                        padding: const EdgeInsets.only(
+                          left: 67,
+                          right: 66,
+                          top: 20,
+                          bottom: 19,
+                        ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          children:[
+                          children: [
                             Text(
                               "Continue",
                               style: TextStyle(

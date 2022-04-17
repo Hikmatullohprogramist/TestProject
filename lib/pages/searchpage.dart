@@ -1,9 +1,12 @@
-// ignore_for_file: missing_return
+// ignore_for_file: missing_return, unnecessary_import, unused_import, use_key_in_widget_constructors, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medsage/Seach%20page/topdoctors.dart';
+import 'package:medsage/pages/Search%20page/Selected%20Page/selecttaplets.dart';
+import 'package:medsage/pages/Search%20page/topClinik.dart';
+import 'package:medsage/pages/Search%20page/topDorilar.dart';
+import 'package:medsage/pages/Search%20page/topdoctors.dart';
 
 class MyCustomUI extends StatefulWidget {
   @override
@@ -56,6 +59,39 @@ class _MyCustomUIState extends State<MyCustomUI>
                   parent: AlwaysScrollableScrollPhysics()),
               children: [
                 searchBar(),
+
+                //Top Doctors
+                SizedBox(height: _w / 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Top Doctors',
+                        textScaleFactor: 1.4,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black.withOpacity(.7),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'See all',
+                          textScaleFactor: 1.4,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 SizedBox(height: _w / 20),
                 Container(
                   height: 200,
@@ -83,53 +119,121 @@ class _MyCustomUIState extends State<MyCustomUI>
                     ],
                   ),
                 ),
-              ],
-            ),
-            settingIcon(),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget settingIcon() {
-    double _w = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: EdgeInsets.fromLTRB(0, _w / 10, _w / 20, 0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Container(
-            height: _w / 8.5,
-            width: _w / 8.5,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(.1),
-                  blurRadius: 30,
-                  offset: Offset(0, 15),
+                SizedBox(height: _w / 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Top Cliniсs',
+                        textScaleFactor: 1.4,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black.withOpacity(.7),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'See all',
+                          textScaleFactor: 1.4,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: _w / 20),
+                //Top cliniks
+                // SizedBox(height: _w / 20),
+                Container(
+                  height: 200,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      TopCliniks(),
+                      SizedBox(width: 20),
+                      TopCliniks(),
+                      SizedBox(width: 20),
+                    ],
+                  ),
+                ),
+                SizedBox(height: _w / 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Top taplets',
+                        textScaleFactor: 1.4,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black.withOpacity(.7),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SelectTaplets()),
+                        );
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'See all',
+                          textScaleFactor: 1.4,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: _w / 20),
+                //Top pharm
+                // SizedBox(height: _w / 20),
+                Container(
+                  height: 200,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                      TopDorilar(),
+                      SizedBox(width: 20),
+                    ],
+                  ),
                 ),
               ],
-              shape: BoxShape.circle,
             ),
-            child: IconButton(
-              splashColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              tooltip: 'Settings',
-              icon: Icon(Icons.settings,
-                  size: _w / 17, color: Colors.black.withOpacity(.6)),
-              onPressed: () {
-                Navigator.of(context).push(
-                  MyFadeRoute(
-                    route: RouteWhereYouGo(),
-                  ),
-                );
-              },
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -144,7 +248,7 @@ class _MyCustomUIState extends State<MyCustomUI>
           Container(
             alignment: Alignment.center,
             height: _w / 8.5,
-            width: _w / 1.36,
+            width: 341,
             padding: EdgeInsets.symmetric(horizontal: _w / 60),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -166,9 +270,9 @@ class _MyCustomUIState extends State<MyCustomUI>
                     color: Colors.black.withOpacity(.4),
                     fontWeight: FontWeight.w600,
                     fontSize: _w / 22),
-                prefixIcon:
+                suffixIcon:
                     Icon(Icons.search, color: Colors.black.withOpacity(.6)),
-                hintText: 'Search anything.....',
+                hintText: '   Search',
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide.none),
@@ -177,175 +281,18 @@ class _MyCustomUIState extends State<MyCustomUI>
             ),
           ),
           SizedBox(height: _w / 14),
-          Container(
-            width: _w / 1.15,
-            child: Text(
-              'Example Text',
-              textScaleFactor: 1.4,
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Colors.black.withOpacity(.7),
-              ),
-            ),
-          ),
+          // Container(
+          //   width: _w / 1.15,
+          //   child: Text(
+          //     'Top Doctors',
+          //     textScaleFactor: 1.4,
+          //     style: TextStyle(
+          //       fontWeight: FontWeight.w600,
+          //       color: Colors.black.withOpacity(.7),
+          //     ),
+          //   ),
+          // ),
         ],
-      ),
-    );
-  }
-
-  Widget groupOfCards(
-      String title1,
-      String subtitle1,
-      String image1,
-      Widget route1,
-      String title2,
-      String subtitle2,
-      String image2,
-      Widget route2) {
-    double _w = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: EdgeInsets.fromLTRB(_w / 20, 0, _w / 20, _w / 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          card(title1, subtitle1, image1, route1),
-          card(title2, subtitle2, image2, route2),
-        ],
-      ),
-    );
-  }
-
-  Widget card(String title, String subtitle, String image, Widget route) {
-    double _w = MediaQuery.of(context).size.width;
-    return Opacity(
-      opacity: _animation.value,
-      child: InkWell(
-        highlightColor: Colors.transparent,
-        splashColor: Colors.transparent,
-        onTap: () {
-          Navigator.of(context).push(MyFadeRoute(route: route));
-        },
-        child: Container(
-          width: _w / 2.36,
-          height: _w / 1.8,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(color: Colors.black.withOpacity(.05), blurRadius: 50),
-            ],
-          ),
-          child: Column(
-            children: [
-              Container(
-                width: _w / 2.36,
-                height: _w / 2.6,
-                decoration: BoxDecoration(
-                  color: Color(0xff5C71F3),
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(20),
-                  ),
-                ),
-                alignment: Alignment.center,
-                child: Text(
-                  'Add image here',
-                  textScaleFactor: 1.2,
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              // Image.asset(
-              //   image,
-              //   fit: BoxFit.cover,
-              //   width: _w / 2.36,
-              //   height: _w / 2.6),
-              Container(
-                height: _w / 6,
-                width: _w / 2.36,
-                padding: EdgeInsets.symmetric(horizontal: _w / 25),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      textScaleFactor: 1.4,
-                      maxLines: 1,
-                      softWrap: true,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: Colors.black.withOpacity(.8),
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Text(
-                      subtitle,
-                      textScaleFactor: 1,
-                      maxLines: 1,
-                      softWrap: true,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black.withOpacity(.7),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class MyFadeRoute extends PageRouteBuilder {
-  final Widget page;
-  final Widget route;
-
-  MyFadeRoute({this.page, this.route})
-      : super(
-          pageBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-          ) =>
-              page,
-          transitionsBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-            Widget child,
-          ) =>
-              FadeTransition(
-            opacity: animation,
-            child: route,
-          ),
-        );
-}
-
-class RouteWhereYouGo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        brightness: Brightness.light,
-        backgroundColor: Colors.white,
-        elevation: 50,
-        centerTitle: true,
-        shadowColor: Colors.black.withOpacity(.5),
-        title: Text('EXAMPLE  PAGE',
-            style: TextStyle(
-                color: Colors.black.withOpacity(.7),
-                fontWeight: FontWeight.w600,
-                letterSpacing: 1)),
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black.withOpacity(.8),
-          ),
-          onPressed: () => Navigator.maybePop(context),
-        ),
       ),
     );
   }

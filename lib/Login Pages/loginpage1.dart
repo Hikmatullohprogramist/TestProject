@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, unnecessary_import, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, duplicate_ignore
+
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -17,6 +19,7 @@ class _LoginPage1State extends State<LoginPage1> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
+          // ignore: prefer_const_constructors
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
@@ -57,7 +60,6 @@ class _LoginPage1State extends State<LoginPage1> {
               child: TextField(
                 obscureText: isHiddenPassword,
                 decoration: InputDecoration(
-
                   hintText: 'Confirm password',
                   hintStyle: TextStyle(color: Colors.grey),
                   border: InputBorder.none,
@@ -92,7 +94,7 @@ class _LoginPage1State extends State<LoginPage1> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => LoginPage3()),
@@ -136,11 +138,10 @@ class _LoginPage1State extends State<LoginPage1> {
       ),
     );
   }
-  void _togglePasswordView(){
+
+  void _togglePasswordView() {
     setState(() {
       isHiddenPassword = !isHiddenPassword;
-
     });
   }
-
 }
