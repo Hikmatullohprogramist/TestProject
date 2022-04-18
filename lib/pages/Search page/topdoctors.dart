@@ -1,9 +1,12 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TopDoctors extends StatelessWidget {
+  final Image rasm;
+  TopDoctors({Key key, this.rasm}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +16,7 @@ class TopDoctors extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            "assets/Top Doctors/dc.nafisa.png",
+            rasm.toString(),
           ),
           fit: BoxFit.cover,
         ),

@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TopCliniks extends StatefulWidget {
-  // final Image rasm;
-  // const TopCliniks({this.rasm});
+  final Image rasm;
+  const TopCliniks({this.rasm});
 
   @override
   State<TopCliniks> createState() => _TopCliniksState();
@@ -49,19 +49,19 @@ class _TopCliniksState extends State<TopCliniks> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(9.06),
                       image: DecorationImage(
-                        image: AssetImage(
-                          'assets/Top Clinics/NanoMedical.png',
-                        ),
+                        image: AssetImage(widget.rasm.toString()),
                         fit: BoxFit.cover,
                       ),
                     ),
-                    // child: Image.asset(
-                    //   'assets/Top Clinics/NanoMedical.png',
-                    //   fit: BoxFit.cover,
-                    // ),
+                    child: Image.asset(
+                      widget.rasm.toString(),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-                SizedBox(width: 10.0,),
+                SizedBox(
+                  width: 10.0,
+                ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -75,12 +75,13 @@ class _TopCliniksState extends State<TopCliniks> {
                               fontWeight: FontWeight.bold,
                               color: Colors.black),
                         ),
-                        SizedBox(height: 2,),
+                        SizedBox(
+                          height: 2,
+                        ),
                         Text(
                           'Margilon shahar, Mustaqillik \n ko’chasi 120-uy. ',
                           style: TextStyle(
-                              fontSize: 10.87,
-                              color: Color(0xFFABAFB3)),
+                              fontSize: 10.87, color: Color(0xFFABAFB3)),
                         )
                       ],
                     ),

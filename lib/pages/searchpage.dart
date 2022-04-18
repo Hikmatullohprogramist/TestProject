@@ -98,23 +98,18 @@ class _MyCustomUIState extends State<MyCustomUI>
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      TopDoctors(),
+                      TopDoctors(
+                          rasm: Image.asset(
+                              'assets/Top Doctors/dr.nafisa.png'.toString())),
                       SizedBox(width: 20),
-                      TopDoctors(),
+                      TopDoctors(
+                          rasm: Image.asset(
+                              'assets/Top Doctors/Dr.Muhammadaziz.png'
+                                  .toString())),
                       SizedBox(width: 20),
-                      TopDoctors(),
-                      SizedBox(width: 20),
-                      TopDoctors(),
-                      SizedBox(width: 20),
-                      TopDoctors(),
-                      SizedBox(width: 20),
-                      TopDoctors(),
-                      SizedBox(width: 20),
-                      TopDoctors(),
-                      SizedBox(width: 20),
-                      TopDoctors(),
-                      SizedBox(width: 20),
-                      TopDoctors(),
+                      TopDoctors(
+                          rasm: Image.asset(
+                              'assets/Top Doctors/Dr.Shoxruh.png'.toString())),
                       SizedBox(width: 20),
                     ],
                   ),
@@ -184,7 +179,8 @@ class _MyCustomUIState extends State<MyCustomUI>
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SelectTaplets()),
+                          MaterialPageRoute(
+                              builder: (context) => SelectTaplets()),
                         );
                       },
                       child: Padding(
