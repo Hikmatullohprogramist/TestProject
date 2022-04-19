@@ -4,8 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TopCliniks extends StatefulWidget {
-  final Image rasm;
-  const TopCliniks({this.rasm});
+  final String rasm;
+  final String Clinick_name;
+  final String Locate;
+  const TopCliniks({this.rasm, this.Clinick_name, this.Locate});
 
   @override
   State<TopCliniks> createState() => _TopCliniksState();
@@ -17,7 +19,7 @@ class _TopCliniksState extends State<TopCliniks> {
     return Container(
       alignment: Alignment.bottomCenter,
       width: 276.27,
-      height: 10,
+      height: 114.13,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(9.6),
         boxShadow: [
@@ -29,7 +31,7 @@ class _TopCliniksState extends State<TopCliniks> {
           BoxShadow(
             color: Colors.white,
             blurRadius: 7,
-            offset: Offset(1, 2),
+            offset: Offset(-1, -2),
           ),
         ],
       ),
@@ -47,15 +49,12 @@ class _TopCliniksState extends State<TopCliniks> {
                     width: 74,
                     height: 74,
                     decoration: BoxDecoration(
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(9.06),
                       image: DecorationImage(
-                        image: AssetImage(widget.rasm.toString()),
+                        image: AssetImage(widget.rasm),
                         fit: BoxFit.cover,
                       ),
-                    ),
-                    child: Image.asset(
-                      widget.rasm.toString(),
-                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -69,7 +68,7 @@ class _TopCliniksState extends State<TopCliniks> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'NANO Medical Clinic',
+                          widget.Clinick_name,
                           style: TextStyle(
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -79,10 +78,10 @@ class _TopCliniksState extends State<TopCliniks> {
                           height: 2,
                         ),
                         Text(
-                          'Margilon shahar, Mustaqillik \n ko’chasi 120-uy. ',
+                          widget.Locate,
                           style: TextStyle(
                               fontSize: 10.87, color: Color(0xFFABAFB3)),
-                        )
+                        ),
                       ],
                     ),
                   ],

@@ -4,8 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TopDoctors extends StatelessWidget {
-  final Image rasm;
-  TopDoctors({Key key, this.rasm}) : super(key: key);
+  final String rasm;
+  final String nomi;
+  TopDoctors({Key key, this.rasm, this.nomi}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,12 +17,12 @@ class TopDoctors extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            rasm.toString(),
+            rasm,
           ),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(12),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Color(0x3f000000),
             blurRadius: 7,
@@ -33,33 +34,37 @@ class TopDoctors extends StatelessWidget {
         padding: const EdgeInsets.only(bottom: 10.0),
         child: Container(
           alignment: Alignment.bottomCenter,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Column(
             children: [
-              Icon(
-                Icons.star,
-                color: Colors.amber,
-                size: 20,
-              ),
-              Icon(
-                Icons.star,
-                color: Colors.amber,
-                size: 20,
-              ),
-              Icon(
-                Icons.star,
-                color: Colors.amber,
-                size: 20,
-              ),
-              Icon(
-                Icons.star,
-                color: Colors.amber,
-                size: 20,
-              ),
-              Icon(
-                Icons.star,
-                color: Colors.amber,
-                size: 20,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                    size: 20,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                    size: 20,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                    size: 20,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                    size: 20,
+                  ),
+                  Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                    size: 20,
+                  ),
+                ],
               ),
             ],
           ),

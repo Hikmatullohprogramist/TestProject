@@ -371,13 +371,13 @@ class _LoginPage3State extends State<LoginPage3> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    width: 84,
+                    width: 100,
                     height: 107.25,
                     child: Stack(
                       children: [
                         Positioned.fill(
                           child: Align(
-                            alignment: Alignment.topLeft,
+                            alignment: Alignment.topCenter,
                             child: Container(
                               width: 81.98,
                               height: 81.98,
@@ -396,22 +396,24 @@ class _LoginPage3State extends State<LoginPage3> {
                           ),
                         ),
                         Positioned(
-                          left: 24.06,
+                          left: 30.06,
                           top: 24.06,
                           child: Container(
                               width: 33.86,
                               height: 33.86,
                               child: Image.asset(
-                                  'assets/Need advice/Traumatologist.png')),
+                                  'assets/Need advice/Traumatologist.png'),),
                         ),
                         SizedBox(
                           width: 100.0,
                         ),
-                        Positioned.fill(
+                        Expanded(
+                         // width: 20.0,
                           child: Align(
                             alignment: Alignment.bottomLeft,
                             child: Text(
                               "Traumatologist",
+                              overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 color: Color(0xff9093a3),

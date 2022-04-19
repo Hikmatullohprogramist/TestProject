@@ -95,23 +95,35 @@ class _MyCustomUIState extends State<MyCustomUI>
                 SizedBox(height: _w / 20),
                 Container(
                   height: 200,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      TopDoctors(
-                          rasm: Image.asset(
-                              'assets/Top Doctors/dr.nafisa.png'.toString())),
-                      SizedBox(width: 20),
-                      TopDoctors(
-                          rasm: Image.asset(
-                              'assets/Top Doctors/Dr.Muhammadaziz.png'
-                                  .toString())),
-                      SizedBox(width: 20),
-                      TopDoctors(
-                          rasm: Image.asset(
-                              'assets/Top Doctors/Dr.Shoxruh.png'.toString())),
-                      SizedBox(width: 20),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        TopDoctors(
+                            rasm:
+                                'assets/Top Doctors/dr.nafisa.png'),
+                        SizedBox(width: 20),
+                        TopDoctors(
+                            rasm:
+                                'assets/Top Doctors/Dr.Muhammadaziz.png'),
+                        SizedBox(width: 20),
+                        TopDoctors(
+                            rasm: 'assets/Top Doctors/Dr.Shoxruh.png'),
+                        SizedBox(width: 20),
+                        TopDoctors(
+                            rasm:
+                                'assets/Top Doctors/dr.nafisa.png'),
+                        SizedBox(width: 20),
+                        TopDoctors(
+                            rasm:
+                                'assets/Top Doctors/Dr.Muhammadaziz.png'),
+                        SizedBox(width: 20),
+                        TopDoctors(
+                            rasm: 'assets/Top Doctors/Dr.Shoxruh.png'),
+                        SizedBox(width: 20),
+                      ],
+                    ),
                   ),
                 ),
                 SizedBox(height: _w / 20),
@@ -153,9 +165,9 @@ class _MyCustomUIState extends State<MyCustomUI>
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      TopCliniks(),
+                      TopCliniks(Clinick_name: 'Nano Medical', Locate: 'Margilon shahar, Mustaqillik \n ko’chasi 120-uy. ', rasm: 'assets/Top Clinics/NanoMedical.png'),
                       SizedBox(width: 20),
-                      TopCliniks(),
+                      TopCliniks(Clinick_name: 'Sita Pharmacy', Locate: 'd/9 address, kopal nagar \n Karachi', rasm: 'assets/Top Clinics/SitaPharmacy.png'),
                       SizedBox(width: 20),
                     ],
                   ),
