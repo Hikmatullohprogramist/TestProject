@@ -1,11 +1,13 @@
-// ignore_for_file: prefer_const_constructors, file_names, unnecessary_import, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, file_names, unnecessary_import, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TopDorilar extends StatelessWidget {
-  final Image rasm;
-  TopDorilar({this.rasm});
+  final String rasm;
+  final String name;
+
+  TopDorilar({this.rasm, this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,9 @@ class TopDorilar extends StatelessWidget {
       height: 100,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(rasm.toString()),
+          image: AssetImage(
+            rasm,
+          ),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(7),

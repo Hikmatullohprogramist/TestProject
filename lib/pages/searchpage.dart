@@ -49,7 +49,7 @@ class _MyCustomUIState extends State<MyCustomUI>
   Widget build(BuildContext context) {
     double _w = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xffF5F5F5),
+      backgroundColor: Color(0xFFF7FAFE),
       body: RefreshIndicator(
         onRefresh: _refresh,
         child: Stack(
@@ -101,27 +101,33 @@ class _MyCustomUIState extends State<MyCustomUI>
                       scrollDirection: Axis.horizontal,
                       children: [
                         TopDoctors(
-                            rasm:
-                                'assets/Top Doctors/dr.nafisa.png'),
+                          rasm: 'assets/Top Doctors/dr.nafisa.png',
+                          nomi: 'Dr.Nafisa',
+                          unvon: 'Traumatologist',
+                        ),
                         SizedBox(width: 20),
                         TopDoctors(
-                            rasm:
-                                'assets/Top Doctors/Dr.Muhammadaziz.png'),
+                            rasm: 'assets/Top Doctors/Dr.Muhammadaziz.png',nomi: 'Dr. Muhammadaziz', unvon: 'Psychologist'),
+                        SizedBox(width: 20),
+                        TopDoctors(rasm: 'assets/Top Doctors/Dr.Shoxruh.png', nomi: 'Dr.Shoxruh', unvon: 'Dentist',),
+                              SizedBox(width: 20),     TopDoctors(
+                          rasm: 'assets/Top Doctors/dr.nafisa.png',
+                          nomi: 'Dr.Nafisa',
+                          unvon: 'Traumatologist',
+                        ),
                         SizedBox(width: 20),
                         TopDoctors(
-                            rasm: 'assets/Top Doctors/Dr.Shoxruh.png'),
+                            rasm: 'assets/Top Doctors/Dr.Muhammadaziz.png',nomi: 'Dr. Muhammadaziz', unvon: 'Psychologist'),
                         SizedBox(width: 20),
-                        TopDoctors(
-                            rasm:
-                                'assets/Top Doctors/dr.nafisa.png'),
-                        SizedBox(width: 20),
-                        TopDoctors(
-                            rasm:
-                                'assets/Top Doctors/Dr.Muhammadaziz.png'),
-                        SizedBox(width: 20),
-                        TopDoctors(
-                            rasm: 'assets/Top Doctors/Dr.Shoxruh.png'),
-                        SizedBox(width: 20),
+                        TopDoctors(rasm: 'assets/Top Doctors/Dr.Shoxruh.png', nomi: 'Dr.Shoxruh', unvon: 'Dentist',),
+                              SizedBox(width: 20),     
+
+
+
+
+
+
+
                       ],
                     ),
                   ),
@@ -165,9 +171,16 @@ class _MyCustomUIState extends State<MyCustomUI>
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      TopCliniks(Clinick_name: 'Nano Medical', Locate: 'Margilon shahar, Mustaqillik \n ko’chasi 120-uy. ', rasm: 'assets/Top Clinics/NanoMedical.png'),
+                      TopCliniks(
+                          Clinick_name: 'Nano Medical',
+                          Locate:
+                              'Margilon shahar, Mustaqillik \n ko’chasi 120-uy. ',
+                          rasm: 'assets/Top Clinics/NanoMedical.png'),
                       SizedBox(width: 20),
-                      TopCliniks(Clinick_name: 'Sita Pharmacy', Locate: 'd/9 address, kopal nagar \n Karachi', rasm: 'assets/Top Clinics/SitaPharmacy.png'),
+                      TopCliniks(
+                          Clinick_name: 'Sita Pharmacy',
+                          Locate: 'd/9 address, kopal nagar \n Karachi',
+                          rasm: 'assets/Top Clinics/SitaPharmacy.png'),
                       SizedBox(width: 20),
                     ],
                   ),
@@ -217,9 +230,15 @@ class _MyCustomUIState extends State<MyCustomUI>
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      TopDorilar(),
+                      TopDorilar(
+                        rasm: 'assets/Recommended drugs/antibiyotik.png',
+                        name: 'Antibiyotik',
+                      ),
                       SizedBox(width: 20),
-                      TopDorilar(),
+                      TopDorilar(
+                        rasm: 'assets/Recommended drugs/duovit.png',
+                        name: 'Duovit',
+                      ),
                       SizedBox(width: 20),
                       TopDorilar(),
                       SizedBox(width: 20),
@@ -289,17 +308,6 @@ class _MyCustomUIState extends State<MyCustomUI>
             ),
           ),
           SizedBox(height: _w / 14),
-          // Container(
-          //   width: _w / 1.15,
-          //   child: Text(
-          //     'Top Doctors',
-          //     textScaleFactor: 1.4,
-          //     style: TextStyle(
-          //       fontWeight: FontWeight.w600,
-          //       color: Colors.black.withOpacity(.7),
-          //     ),
-          //   ),
-          // ),
         ],
       ),
     );
